@@ -33,10 +33,11 @@
         }
       },
       "note": {
-        "pricing": "<strong>R$249 por mês.</strong> Inclui R$75 em créditos de IA renovados mensalmente.",
+        "pricing": "<strong>R$49 por mês.</strong> Inclui R$15 em créditos de IA renovados mensalmente.",
         "signIn": "Faça login para implantar seu assistente de IA e conectar seus canais.",
         "invalid": "Certifique-se de que todos os campos estão preenchidos corretamente.",
-        "limited": "Servidores limitados — restam apenas 8 vagas."
+        "limited": "Servidores limitados — restam apenas 8 vagas.",
+        "subscriptionRequired": "Você precisa de uma assinatura ativa para implantar. Escolha um plano para continuar."
       },
       "tips": {
         "languageTitle": "Configure o idioma da sua IA",

@@ -31,6 +31,14 @@ export const useInstance = () => {
       router.refresh();
       router.replace(pathsConfig.dashboard.index);
     },
+    onError: (error) => {
+      if (error.message.includes("subscriptionRequired")) {
+        toast.error(t("instance.deploy.note.subscriptionRequired"));
+        router.push(pathsConfig.dashboard.settings.subscription);
+        return;
+      }
+      toast.error(error.message);
+    },
   });
 
   const manage = useMutation({
