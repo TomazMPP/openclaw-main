@@ -139,14 +139,21 @@
       "month": "month",
       "nextBilling": "Next billing",
       "cancelingAtEnd": "Your subscription will cancel at the end of the current period.",
-      "includes": "Everything included in your plan:",
+      "choosePlan": "Choose your plan",
+      "choosePlanDescription": "Select the best plan for you. All plans include full access.",
+      "plans": {
+        "monthly": "Monthly",
+        "quarterly": "Quarterly",
+        "semiannual": "Semi-annual"
+      },
+      "includes": "Included in all plans:",
       "feature1": "Unlimited AI bots",
       "feature2": "All communication channels",
       "feature3": "Priority support",
       "manageFooter": "Manage your subscription via the Stripe portal.",
-      "subscribeFooter": "Subscribe to start deploying AI bots.",
+      "subscribeFooter": "You will be redirected to Stripe to complete payment.",
       "manage": "Manage subscription",
-      "subscribe": "Subscribe - R$49/month"
+      "subscribe": "Subscribe now"
     },
     "apiKeys": {
       "title": "API Keys",

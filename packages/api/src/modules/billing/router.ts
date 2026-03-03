@@ -1,4 +1,5 @@
 import { Hono } from "hono";
+import * as z from "zod";
 
 import { eq } from "@workspace/db";
 import { subscription } from "@workspace/db/schema";
@@ -6,11 +7,21 @@ import { db } from "@workspace/db/server";
 import { generateId } from "@workspace/shared/utils";
 
 import { env } from "../../env";
-import { enforceAuth } from "../../middleware";
+import { enforceAuth, validate } from "../../middleware";
 
 import { getStripe } from "./stripe";
 
 import type Stripe from "stripe";
+
+const PRICE_MAP = {
+  monthly: () => env.STRIPE_PRICE_MONTHLY,
+  quarterly: () => env.STRIPE_PRICE_QUARTERLY,
+  semiannual: () => env.STRIPE_PRICE_SEMIANNUAL,
+} as const;
+
+const checkoutSchema = z.object({
+  plan: z.enum(["monthly", "quarterly", "semiannual"]).default("monthly"),
+});
 
 const getOrigin = (c: {
   req: { header: (name: string) => string | undefined };
@@ -142,11 +153,17 @@ export const billingRouter = new Hono()
 
     return c.json(sub ?? null);
   })
-  .post("/checkout", async (c) => {
+  .post("/checkout", validate("json", checkoutSchema), async (c) => {
     const userId = c.var.user.id;
     const userEmail = c.var.user.email;
+    const { plan } = c.req.valid("json");
     const stripe = getStripe();
     const origin = getOrigin(c);
+
+    const priceId = PRICE_MAP[plan]();
+    if (!priceId) {
+      return c.json({ error: "Price not configured" }, 400);
+    }
 
     const existing = await db.query.subscription.findFirst({
       where: eq(subscription.userId, userId),
@@ -178,13 +195,13 @@ export const billingRouter = new Hono()
       mode: "subscription",
       line_items: [
         {
-          price: env.STRIPE_PRICE_ID,
+          price: priceId,
           quantity: 1,
         },
       ],
       success_url: `${origin}/dashboard?checkout=success`,
       cancel_url: `${origin}/dashboard?checkout=cancel`,
-      metadata: { userId },
+      metadata: { userId, plan },
     });
 
     return c.json({ url: session.url });

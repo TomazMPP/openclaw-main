@@ -16,8 +16,8 @@ const queries = {
 const mutations = {
   checkout: mutationOptions({
     mutationKey: [KEY, "checkout"],
-    mutationFn: async () => {
-      const res = await api.billing.checkout.$post();
+    mutationFn: async (plan: "monthly" | "quarterly" | "semiannual") => {
+      const res = await api.billing.checkout.$post({ json: { plan } });
       const data = await res.json();
       if (!res.ok) throw new Error("error" in data ? data.error : "Failed");
       return data as { url: string | null };

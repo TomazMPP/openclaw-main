@@ -14,7 +14,9 @@ export const preset = {
   server: {
     STRIPE_SECRET_KEY: z.string().optional().default(""),
     STRIPE_WEBHOOK_SECRET: z.string().optional().default(""),
-    STRIPE_PRICE_ID: z.string().optional().default(""),
+    STRIPE_PRICE_MONTHLY: z.string().optional().default(""),
+    STRIPE_PRICE_QUARTERLY: z.string().optional().default(""),
+    STRIPE_PRICE_SEMIANNUAL: z.string().optional().default(""),
   },
 } as const satisfies Preset;
 

@@ -139,14 +139,21 @@
       "month": "mes",
       "nextBilling": "Próxima facturación",
       "cancelingAtEnd": "Tu suscripción se cancelará al final del período actual.",
-      "includes": "Todo incluido en tu plan:",
+      "choosePlan": "Elige tu plan",
+      "choosePlanDescription": "Selecciona el plan ideal para ti. Todos los planes incluyen acceso completo.",
+      "plans": {
+        "monthly": "Mensual",
+        "quarterly": "Trimestral",
+        "semiannual": "Semestral"
+      },
+      "includes": "Incluido en todos los planes:",
       "feature1": "Bots de IA ilimitados",
       "feature2": "Todos los canales de comunicación",
       "feature3": "Soporte prioritario",
       "manageFooter": "Gestiona tu suscripción a través del portal de Stripe.",
-      "subscribeFooter": "Suscríbete para comenzar a crear bots de IA.",
+      "subscribeFooter": "Serás redirigido a Stripe para completar el pago.",
       "manage": "Gestionar suscripción",
-      "subscribe": "Suscribirse - R$49/mes"
+      "subscribe": "Suscribirse ahora"
     },
     "apiKeys": {
       "title": "Claves de API",
