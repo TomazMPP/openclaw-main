@@ -1,3 +1,5 @@
+import { adminClient } from "better-auth/client/plugins";
+
 import { createAuthClient } from "@workspace/auth/client/web";
 import { ExecutionSide, Platform } from "@workspace/shared/constants";
 
@@ -8,5 +10,5 @@ export const authClient = createAuthClient({
     },
     throw: true,
   },
-  plugins: [],
+  plugins: [adminClient()],
 });

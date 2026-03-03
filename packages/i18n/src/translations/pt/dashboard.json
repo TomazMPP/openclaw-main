@@ -67,7 +67,7 @@
       "dead": "Inativo"
     },
     "logs": {
-      "loading": "Aguardando logs..."
+      "loading": "Aguardando logs... (isso pode levar até 10 minutos)"
     },
     "pairing": {
       "device": {
@@ -91,5 +91,18 @@
       "alreadyExists": "Você já tem uma instância implantada. Não é possível implantar outra por enquanto.",
       "notFound": "Você ainda não tem uma instância implantada. Implante uma primeiro."
     }
+  },
+  "admin": {
+    "title": "Gerenciar Usuários",
+    "description": "Visualize e gerencie todos os usuários da plataforma.",
+    "totalUsers": "{{count}} usuário(s) cadastrado(s)",
+    "setRole": "Definir como {{role}}",
+    "confirmBan": "Tem certeza que deseja banir este usuário?",
+    "confirmDelete": "Tem certeza que deseja excluir este usuário? Esta ação não pode ser desfeita.",
+    "banSuccess": "Usuário banido com sucesso.",
+    "unbanSuccess": "Usuário desbanido com sucesso.",
+    "roleSuccess": "Função do usuário atualizada com sucesso.",
+    "deleteSuccess": "Usuário excluído com sucesso.",
+    "noUsers": "Nenhum usuário encontrado."
   }
 }

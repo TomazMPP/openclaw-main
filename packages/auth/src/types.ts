@@ -61,6 +61,36 @@ const ERROR_MESSAGES = {
     "auth:error.methodNotAllowedDeferSessionRequired",
   BODY_MUST_BE_AN_OBJECT: "auth:error.bodyMustBeAnObject",
   PASSWORD_ALREADY_SET: "auth:error.credentials.password.alreadySet",
+  YOU_CANNOT_BAN_YOURSELF: "auth:error.admin.cannotBanYourself",
+  YOU_ARE_NOT_ALLOWED_TO_CHANGE_USERS_ROLE:
+    "auth:error.admin.notAllowedToChangeRole",
+  YOU_ARE_NOT_ALLOWED_TO_CREATE_USERS:
+    "auth:error.admin.notAllowedToCreateUsers",
+  YOU_ARE_NOT_ALLOWED_TO_LIST_USERS:
+    "auth:error.admin.notAllowedToListUsers",
+  YOU_ARE_NOT_ALLOWED_TO_BAN_USERS:
+    "auth:error.admin.notAllowedToBanUsers",
+  YOU_ARE_NOT_ALLOWED_TO_IMPERSONATE_USERS:
+    "auth:error.admin.notAllowedToImpersonate",
+  YOU_ARE_NOT_ALLOWED_TO_DELETE_USERS:
+    "auth:error.admin.notAllowedToDeleteUsers",
+  YOU_ARE_NOT_ALLOWED_TO_SET_USERS_PASSWORD:
+    "auth:error.admin.notAllowedToSetPassword",
+  YOU_ARE_NOT_ALLOWED_TO_REVOKE_USERS_SESSIONS:
+    "auth:error.admin.notAllowedToRevokeSession",
+  YOU_ARE_NOT_ALLOWED_TO_UPDATE_USERS:
+    "auth:error.admin.notAllowedToUpdateUsers",
+  YOU_ARE_NOT_ALLOWED_TO_GET_USER:
+    "auth:error.admin.notAllowedToGetUserDetails",
+  YOU_ARE_NOT_ALLOWED_TO_LIST_USERS_SESSIONS:
+    "auth:error.admin.notAllowedToRevokeSession",
+  YOU_CANNOT_REMOVE_YOURSELF: "auth:error.admin.cannotBanYourself",
+  YOU_ARE_NOT_ALLOWED_TO_SET_NON_EXISTENT_VALUE:
+    "auth:error.admin.notAllowedToChangeRole",
+  YOU_CANNOT_IMPERSONATE_ADMINS: "auth:error.admin.cannotImpersonateAdmin",
+  BANNED_USER: "auth:error.admin.userNotBanned",
+  NO_DATA_TO_UPDATE: "auth:error.admin.notAllowedToUpdateUsers",
+  INVALID_ROLE_TYPE: "auth:error.admin.notAllowedToChangeRole",
 } as const satisfies Record<AuthErrorCode, TranslationKey>;
 
 export type { AuthErrorCode };

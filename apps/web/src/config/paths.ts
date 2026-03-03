@@ -7,6 +7,9 @@ const pathsConfig = {
   index: "/",
   dashboard: {
     index: DASHBOARD_PREFIX,
+    admin: {
+      users: `${DASHBOARD_PREFIX}/admin`,
+    },
   },
 } as const;
 

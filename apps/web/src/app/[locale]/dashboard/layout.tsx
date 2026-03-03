@@ -27,7 +27,7 @@ const agents = [
   "Eleanor",
 ];
 
-const menu = [
+const getMenu = (isAdmin: boolean) => [
   {
     label: "yourInstance",
     items: [
@@ -62,6 +62,20 @@ const menu = [
       },
     ],
   },
+  ...(isAdmin
+    ? [
+        {
+          label: "admin",
+          items: [
+            {
+              title: "manageUsers",
+              href: pathsConfig.dashboard.admin.users,
+              icon: <Icons.ShieldUser />,
+            },
+          ],
+        },
+      ]
+    : []),
   {
     label: "settings",
     items: [
@@ -94,6 +108,9 @@ export default async function DashboardLayout({
   if (!user) {
     return redirect(pathsConfig.index);
   }
+
+  const isAdmin = user.role === "admin";
+  const menu = getMenu(isAdmin);
 
   const queryClient = getQueryClient();
   await queryClient.prefetchQuery({

@@ -37,6 +37,25 @@ export const enforceAuth = createMiddleware<{
 });
 
 /**
+ * Reusable middleware that enforces the user has admin role
+ */
+export const enforceAdmin = createMiddleware<{
+  Variables: {
+    user: User;
+  };
+}>(async (c, next) => {
+  const user = c.var.user;
+
+  if (user.role !== "admin") {
+    throw new HttpException(HttpStatusCode.FORBIDDEN, {
+      code: "error.forbidden",
+    });
+  }
+
+  await next();
+});
+
+/**
  * Reusable middleware that enforces an instance exists for the user before running the
  * procedure
  */
