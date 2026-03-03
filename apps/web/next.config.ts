@@ -14,6 +14,7 @@ const INTERNAL_PACKAGES = [
 
 const config: NextConfig = {
   reactStrictMode: true,
+  serverExternalPackages: ["ssh2"],
   turbopack: {
     rules: {
       "*.svg": {
