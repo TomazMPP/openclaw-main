@@ -88,6 +88,7 @@ import {
   Bell,
   Calculator,
   RotateCcw,
+  TriangleAlert,
 } from "lucide-react";
 
 import { Icons as GlobalIcons } from "@workspace/ui/assets";
@@ -183,6 +184,7 @@ export const Icons = {
   TrendingUp,
   MoreHorizontal,
   Circle,
+  TriangleAlert,
 };
 
 export type Icon = (typeof Icons)[keyof typeof Icons];

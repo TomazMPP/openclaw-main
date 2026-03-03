@@ -38,6 +38,14 @@
         "invalid": "Certifique-se de que todos os campos estão preenchidos corretamente.",
         "limited": "Servidores limitados — restam apenas 8 vagas."
       },
+      "tips": {
+        "languageTitle": "Configure o idioma da sua IA",
+        "languageDescription": "No prompt do sistema, instrua a IA para responder em português. Exemplo: \"Você é um assistente virtual. Sempre responda em português brasileiro.\"",
+        "timeTitle": "O processo pode demorar até 15 minutos",
+        "timeDescription": "Após implantar, aguarde até 15 minutos para a instância ficar totalmente operacional. Quando aparecer nos logs que está pronto, envie uma mensagem no Telegram para o seu bot.",
+        "telegramTitle": "Confirme sua conta no Telegram",
+        "telegramDescription": "Após enviar a primeira mensagem ao bot no Telegram, uma solicitação de pareamento aparecerá no painel. Aprove-a para vincular sua conta e começar a usar."
+      },
       "cta": "Implantar OpenClaw",
       "success": "Implantação iniciada. Pode levar alguns instantes para ser concluída."
     },
