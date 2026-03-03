@@ -1,0 +1,146 @@
+{
+  "error": {
+    "default": "Valor de entrada inválido",
+    "type": "Esperado {{expected}}, mas recebido {{received}}",
+    "type_with_path": "{{path}} deveria ser {{expected}}, mas recebido {{received}}",
+    "undefined": "{{path}} é obrigatório",
+    "date": "Formato de data inválido",
+    "custom": "Valor de entrada inválido",
+    "notMultipleOf": "O número deve ser múltiplo de {{multipleOf}}",
+    "invalidKey": "Chave inválida",
+    "invalidElement": "Elemento inválido: {{- origin}}",
+    "invalidValue_one": "Valor inválido: {{- values}}, esperado {{expected}}",
+    "invalidValue_other": "Valores inválidos: {{- values}}, esperado {{expected}}",
+    "string": {
+      "generic": "Formato inválido - {{format}}",
+      "email": "Insira um endereço de e-mail válido",
+      "url": "Insira uma URL válida",
+      "uuid": "Insira um UUID válido",
+      "cuid": "Insira um CUID válido",
+      "regex": "Formato inválido - {{validation}}",
+      "datetime": "Formato inválido - {{validation}}",
+      "startsWith": "Deve começar com {{startsWith}}",
+      "endsWith": "Deve terminar com {{endsWith}}"
+    },
+    "file": {
+      "type": "Apenas arquivos {{type}} são aceitos.",
+      "maxCount_one": "Você pode enviar apenas {{count}} arquivo.",
+      "maxCount_other": "Você pode enviar até {{count}} arquivos."
+    },
+
+    "tooSmall": {
+      "array": {
+        "inclusive": "Deve conter pelo menos {{minimum}} elemento(s)",
+        "inclusive_one": "Deve conter pelo menos {{minimum}} elemento",
+        "inclusive_other": "Deve conter pelo menos {{minimum}} elementos",
+        "notInclusive": "Deve conter mais de {{minimum}} elemento(s)",
+        "notInclusive_one": "Deve conter mais de {{minimum}} elemento",
+        "notInclusive_other": "Deve conter mais de {{minimum}} elementos"
+      },
+      "string": {
+        "inclusive": "Deve conter pelo menos {{minimum}} caractere(s)",
+        "inclusive_one": "Deve conter pelo menos {{minimum}} caractere",
+        "inclusive_other": "Deve conter pelo menos {{minimum}} caracteres",
+        "inclusive_with_path": "{{path}} deve conter pelo menos {{minimum}} caractere(s)",
+        "inclusive_with_path_one": "{{path}} deve conter pelo menos {{minimum}} caractere",
+        "inclusive_with_path_other": "{{path}} deve conter pelo menos {{minimum}} caracteres",
+        "notInclusive": "Deve conter mais de {{minimum}} caractere(s)",
+        "notInclusive_one": "Deve conter mais de {{minimum}} caractere",
+        "notInclusive_other": "Deve conter mais de {{minimum}} caracteres",
+        "notInclusive_with_path": "{{path}} deve conter mais de {{minimum}} caractere(s)",
+        "notInclusive_with_path_one": "{{path}} deve conter mais de {{minimum}} caractere",
+        "notInclusive_with_path_other": "{{path}} deve conter mais de {{minimum}} caracteres"
+      },
+      "number": {
+        "inclusive": "Deve ser maior ou igual a {{minimum}}",
+        "inclusive_with_path": "{{path}} deve ser maior ou igual a {{minimum}}",
+        "notInclusive": "Deve ser maior que {{minimum}}",
+        "notInclusive_with_path": "{{path}} deve ser maior que {{minimum}}"
+      },
+      "set": {
+        "inclusive": "Valor de entrada inválido",
+        "notInclusive": "Valor de entrada inválido"
+      },
+      "date": {
+        "inclusive": "A data deve ser igual ou posterior a {{- minimum, datetime}}",
+        "notInclusive": "A data deve ser posterior a {{- minimum, datetime}}"
+      },
+      "file": {
+        "inclusive": "O tamanho do arquivo deve ser maior ou igual a {{minimum}}MB",
+        "notInclusive": "O tamanho do arquivo deve ser maior que {{minimum}}MB"
+      }
+    },
+    "tooBig": {
+      "array": {
+        "inclusive": "Deve conter no máximo {{maximum}} elemento(s)",
+        "inclusive_one": "Deve conter no máximo {{maximum}} elemento",
+        "inclusive_other": "Deve conter no máximo {{maximum}} elementos",
+        "notInclusive": "Deve conter menos de {{maximum}} elemento(s)",
+        "notInclusive_one": "Deve conter menos de {{maximum}} elemento",
+        "notInclusive_other": "Deve conter menos de {{maximum}} elementos"
+      },
+      "string": {
+        "inclusive": "Deve conter no máximo {{maximum}} caractere(s)",
+        "inclusive_one": "Deve conter no máximo {{maximum}} caractere",
+        "inclusive_other": "Deve conter no máximo {{maximum}} caracteres",
+        "inclusive_with_path": "{{path}} não deve exceder {{maximum}} caractere(s)",
+        "inclusive_with_path_one": "{{path}} não deve exceder {{maximum}} caractere",
+        "inclusive_with_path_other": "{{path}} não deve exceder {{maximum}} caracteres",
+        "notInclusive": "Deve conter menos de {{maximum}} caractere(s)",
+        "notInclusive_one": "Deve conter menos de {{maximum}} caractere",
+        "notInclusive_other": "Deve conter menos de {{maximum}} caracteres",
+        "notInclusive_with_path": "{{path}} deve conter menos de {{maximum}} caractere(s)",
+        "notInclusive_with_path_one": "{{path}} deve conter menos de {{maximum}} caractere",
+        "notInclusive_with_path_other": "{{path}} deve conter menos de {{maximum}} caracteres"
+      },
+      "number": {
+        "inclusive": "Deve ser menor ou igual a {{maximum}}",
+        "inclusive_with_path": "{{path}} deve ser menor ou igual a {{maximum}}",
+        "notInclusive": "Deve ser menor que {{maximum}}",
+        "notInclusive_with_path": "{{path}} deve ser menor que {{maximum}}"
+      },
+      "set": {
+        "inclusive": "Valor de entrada inválido",
+        "notInclusive": "Valor de entrada inválido"
+      },
+      "date": {
+        "inclusive": "A data deve ser igual ou anterior a {{- maximum, datetime}}",
+        "notInclusive": "A data deve ser anterior a {{- maximum, datetime}}"
+      },
+      "file": {
+        "inclusive": "O tamanho do arquivo deve ser menor ou igual a {{maximum}}MB",
+        "notInclusive": "O tamanho do arquivo deve ser menor que {{maximum}}MB"
+      }
+    }
+  },
+  "validation": {
+    "email": "e-mail",
+    "url": "url",
+    "uuid": "uuid",
+    "cuid": "cuid",
+    "regex": "regex",
+    "datetime": "data e hora"
+  },
+  "type": {
+    "function": "função",
+    "number": "número",
+    "string": "texto",
+    "nan": "nan",
+    "integer": "inteiro",
+    "float": "decimal",
+    "boolean": "booleano",
+    "date": "data",
+    "bigint": "bigint",
+    "undefined": "indefinido",
+    "symbol": "símbolo",
+    "null": "nulo",
+    "array": "lista",
+    "object": "objeto",
+    "unknown": "desconhecido",
+    "promise": "promessa",
+    "void": "vazio",
+    "never": "nunca",
+    "map": "mapa",
+    "set": "conjunto"
+  }
+}

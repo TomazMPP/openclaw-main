@@ -1,0 +1,95 @@
+{
+  "instance": {
+    "home": {
+      "title": "Visão geral",
+      "description": "Visão geral da atividade da sua instância."
+    },
+    "deploy": {
+      "title": "Implantar instância OpenClaw",
+      "description": "Preencha a configuração e implante sua instância OpenClaw em segundos.",
+      "model": {
+        "label": "Qual modelo você deseja usar?"
+      },
+      "communication": {
+        "label": "Qual canal você quer usar para conversar?",
+        "telegram": {
+          "title": "Conectar Telegram",
+          "steps": {
+            "title": "Como obter o token do seu bot?",
+            "step": {
+              "1": "Abra o Telegram e vá até <bot>@BotFather</bot>.",
+              "2": "Inicie uma conversa e digite <code>/newbot</code>.",
+              "3": "Siga as instruções para nomear seu bot e escolher um nome de usuário.",
+              "4": "O BotFather enviará uma mensagem com o token do seu bot. Copie o token inteiro (parece uma longa sequência de números e letras).",
+              "5": "Cole o token no campo abaixo e clique em Salvar e Conectar."
+            }
+          },
+          "form": {
+            "token": {
+              "label": "Insira o token do bot"
+            },
+            "cta": "Salvar e Conectar"
+          }
+        }
+      },
+      "note": {
+        "pricing": "<strong>R$249 por mês.</strong> Inclui R$75 em créditos de IA renovados mensalmente.",
+        "signIn": "Faça login para implantar seu assistente de IA e conectar seus canais.",
+        "invalid": "Certifique-se de que todos os campos estão preenchidos corretamente.",
+        "limited": "Servidores limitados — restam apenas 8 vagas."
+      },
+      "cta": "Implantar OpenClaw",
+      "success": "Implantação iniciada. Pode levar alguns instantes para ser concluída."
+    },
+    "manage": {
+      "start": {
+        "success": "Instância iniciada com sucesso."
+      },
+      "stop": {
+        "success": "Instância parada com sucesso."
+      },
+      "restart": {
+        "success": "Instância reiniciada com sucesso."
+      },
+      "destroy": {
+        "success": "Instância destruída com sucesso."
+      }
+    },
+    "status": {
+      "stopped": "Parado",
+      "running": "Rodando",
+      "starting": "Iniciando",
+      "stopping": "Parando",
+      "restarting": "Reiniciando",
+      "removing": "Removendo",
+      "paused": "Pausado",
+      "exited": "Encerrado",
+      "dead": "Inativo"
+    },
+    "logs": {
+      "loading": "Aguardando logs..."
+    },
+    "pairing": {
+      "device": {
+        "approve": {
+          "success": "Dispositivo aprovado com sucesso. Agora você pode acessar o painel a partir dele."
+        },
+        "reject": {
+          "success": "Solicitação de pareamento do dispositivo rejeitada com sucesso."
+        }
+      },
+      "channel": {
+        "approve": {
+          "success": "Canal aprovado com sucesso. Agora você pode conversar com seu assistente por ele."
+        },
+        "reject": {
+          "success": "Canal rejeitado com sucesso."
+        }
+      }
+    },
+    "error": {
+      "alreadyExists": "Você já tem uma instância implantada. Não é possível implantar outra por enquanto.",
+      "notFound": "Você ainda não tem uma instância implantada. Implante uma primeiro."
+    }
+  }
+}

@@ -58,3 +58,4 @@ dist/
 
 # content collections
 .content-collections
+.env

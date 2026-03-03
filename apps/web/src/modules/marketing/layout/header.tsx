@@ -25,7 +25,7 @@ export const Header = async () => {
           <ThemeSwitcher iconClassName="size-5" />
           <I18nControls iconClassName="size-4.5" />
           <TurboLink
-            href="mailto:hello@turbostarter.dev"
+            href="mailto:contato@openclawbrasil.com"
             className={buttonVariants({ variant: "ghost", size: "icon" })}
           >
             <Icons.Mail className="size-5" />
