@@ -1,0 +1,24 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "extends": ["//"],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [".next/**", "!.next/cache/**", "next-env.d.ts"],
+      "env": [
+        "BETTER_AUTH_SECRET",
+        "GOOGLE_CLIENT_ID",
+        "GOOGLE_CLIENT_SECRET",
+        "GITHUB_CLIENT_ID",
+        "GITHUB_CLIENT_SECRET",
+
+        "OPENAI_API_KEY",
+        "ANTHROPIC_API_KEY",
+        "GOOGLE_GENERATIVE_AI_API_KEY"
+      ]
+    },
+    "dev": {
+      "persistent": true
+    }
+  }
+}

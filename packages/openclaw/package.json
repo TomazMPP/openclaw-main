@@ -1,0 +1,40 @@
+{
+  "name": "@workspace/openclaw",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./env": "./src/env.ts",
+    "./server": "./src/server.ts",
+    "./*": "./src/*/index.ts"
+  },
+  "scripts": {
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit"
+  },
+  "prettier": "@workspace/prettier-config",
+  "dependencies": {
+    "@google-cloud/compute": "6.7.0",
+    "@google-cloud/os-login": "6.2.1",
+    "@workspace/db": "workspace:*",
+    "@workspace/shared": "workspace:*",
+    "envin": "catalog:",
+    "google-auth-library": "10.1.0",
+    "ssh2": "1.17.0",
+    "sshpk": "1.18.0",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@types/ssh2": "1.15.5",
+    "@types/sshpk": "1.17.4",
+    "@workspace/eslint-config": "workspace:*",
+    "@workspace/prettier-config": "workspace:*",
+    "@workspace/tsconfig": "workspace:*",
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "typescript": "catalog:"
+  }
+}
