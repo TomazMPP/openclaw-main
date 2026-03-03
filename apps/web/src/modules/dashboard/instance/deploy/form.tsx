@@ -12,6 +12,7 @@ import { Trans, useTranslation } from "@workspace/i18n";
 import { deployInstanceSchema } from "@workspace/openclaw";
 import {
   MODELS,
+  ADMIN_MODELS,
   COMMUNICATION_CHANNELS,
   CommunicatonChannel,
 } from "@workspace/openclaw/config";
@@ -21,6 +22,7 @@ import { Field, FieldLabel } from "@workspace/ui-web/field";
 import { Icons } from "@workspace/ui-web/icons";
 import { Spinner } from "@workspace/ui-web/spinner";
 
+import { authClient } from "~/lib/auth/client";
 import { useInstance } from "~/modules/dashboard/instance/hooks/use-instance";
 
 import { ModelIcon } from "../icons";
@@ -42,10 +44,14 @@ export const DeployInstanceForm = ({
   ...props
 }: React.HTMLAttributes<HTMLFormElement>) => {
   const { t } = useTranslation("dashboard");
+  const { data: session } = authClient.useSession();
+  const isAdmin = session?.user?.role === "admin";
+  const models = isAdmin ? ADMIN_MODELS : MODELS;
+
   const form = useForm({
     resolver: standardSchemaResolver(deployInstanceSchema),
     defaultValues: {
-      model: MODELS[0].id,
+      model: models[0].id,
       communication: {},
     },
   });
@@ -72,7 +78,7 @@ export const DeployInstanceForm = ({
               </FieldLabel>
 
               <div className="flex flex-col flex-wrap gap-3 sm:flex-row sm:gap-4">
-                {MODELS.map((model) => {
+                {models.map((model) => {
                   const Icon = ModelIcon[model.id];
                   return (
                     <Button

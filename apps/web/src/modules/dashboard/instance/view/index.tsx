@@ -1,7 +1,11 @@
 "use client";
 
 import { useTranslation } from "@workspace/i18n";
-import { MODELS, COMMUNICATION_CHANNELS } from "@workspace/openclaw/config";
+import {
+  MODELS,
+  ADMIN_MODELS,
+  COMMUNICATION_CHANNELS,
+} from "@workspace/openclaw/config";
 import {
   Card,
   CardContent,
@@ -52,7 +56,8 @@ export const ViewInstance = () => {
       id: "model",
       label: t("model"),
       value: (() => {
-        const model = MODELS.find((model) => model.id === instance.data?.model);
+        const allModels = [...ADMIN_MODELS, ...MODELS];
+        const model = allModels.find((m) => m.id === instance.data?.model);
         if (!model) return null;
         const Icon = ModelIcon[model.id];
         return (
