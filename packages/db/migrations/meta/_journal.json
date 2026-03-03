@@ -36,6 +36,13 @@
       "when": 1772505635829,
       "tag": "0004_nappy_blue_shield",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1772509238691,
+      "tag": "0005_milky_scorpion",
+      "breakpoints": true
     }
   ]
 }

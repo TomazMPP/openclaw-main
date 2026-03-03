@@ -3,6 +3,9 @@ import { env } from "hono/adapter";
 import { createMiddleware } from "hono/factory";
 
 import { auth } from "@workspace/auth/server";
+import { eq } from "@workspace/db";
+import { subscription } from "@workspace/db/schema";
+import { db } from "@workspace/db/server";
 import { makeZodI18nMap } from "@workspace/i18n";
 import { getLocaleFromRequest, getTranslation } from "@workspace/i18n/server";
 import { getInstanceByUserId } from "@workspace/openclaw/server";
@@ -74,6 +77,35 @@ export const enforceInstance = createMiddleware<{
   }
 
   c.set("instanceId", instance.id);
+  await next();
+});
+
+/**
+ * Reusable middleware that enforces the user has an active subscription
+ */
+export const enforceSubscription = createMiddleware<{
+  Variables: {
+    user: User;
+  };
+}>(async (c, next) => {
+  const userId = c.var.user.id;
+
+  // Admins bypass subscription check
+  if (c.var.user.role === "admin") {
+    await next();
+    return;
+  }
+
+  const sub = await db.query.subscription.findFirst({
+    where: eq(subscription.userId, userId),
+  });
+
+  if (!sub || sub.status !== "active") {
+    throw new HttpException(HttpStatusCode.PAYMENT_REQUIRED, {
+      code: "error.subscriptionRequired",
+    });
+  }
+
   await next();
 });
 

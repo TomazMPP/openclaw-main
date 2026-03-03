@@ -182,7 +182,7 @@ export const DashboardSidebar = memo<DashboardSidebarProps>(
                               tooltip={t("support")}
                               onClick={() => setOpenMobile(false)}
                               render={
-                                <TurboLink href="mailto:contato@openclawbrasil.com" />
+                                <TurboLink href={pathsConfig.dashboard.support} />
                               }
                             >
                               <Icons.LifeBuoy />
@@ -195,7 +195,7 @@ export const DashboardSidebar = memo<DashboardSidebarProps>(
                               tooltip={t("feedback")}
                               onClick={() => setOpenMobile(false)}
                               render={
-                                <TurboLink href="mailto:contato@openclawbrasil.com" />
+                                <TurboLink href={pathsConfig.dashboard.feedback} />
                               }
                             >
                               <Icons.MessageCircle />

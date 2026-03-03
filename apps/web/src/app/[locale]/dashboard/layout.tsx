@@ -72,6 +72,16 @@ const getMenu = (isAdmin: boolean) => [
               href: pathsConfig.dashboard.admin.users,
               icon: <Icons.ShieldUser />,
             },
+            {
+              title: "supportTickets",
+              href: pathsConfig.dashboard.admin.support,
+              icon: <Icons.Mail />,
+            },
+            {
+              title: "feedbackList",
+              href: pathsConfig.dashboard.admin.feedback,
+              icon: <Icons.MessageCircle />,
+            },
           ],
         },
       ]
@@ -81,17 +91,17 @@ const getMenu = (isAdmin: boolean) => [
     items: [
       {
         title: "account",
-        href: "#settings-account",
+        href: pathsConfig.dashboard.settings.account,
         icon: <Icons.UserRound />,
       },
       {
         title: "subscription",
-        href: "#settings-subscription",
+        href: pathsConfig.dashboard.settings.subscription,
         icon: <Icons.CreditCard />,
       },
       {
         title: "apiKeys",
-        href: "#settings-apikeys",
+        href: pathsConfig.dashboard.settings.apiKeys,
         icon: <Icons.Webhook />,
       },
     ],

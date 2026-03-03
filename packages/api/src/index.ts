@@ -7,8 +7,11 @@ import { db } from "@workspace/db/server";
 import { logger } from "@workspace/shared/logger";
 
 import { localize, delay } from "./middleware";
+import { apiKeysRouter } from "./modules/api-keys/router";
 import { authRouter } from "./modules/auth/router";
+import { billingRouter } from "./modules/billing/router";
 import { openclawRouter } from "./modules/openclaw/router";
+import { supportRouter } from "./modules/support/router";
 import { onError } from "./utils/on-error";
 
 const monitor = statusMonitor({
@@ -37,8 +40,11 @@ const appRouter = new Hono()
   .use(localize)
   .use(monitor.middleware)
   .route("/status", monitor.routes)
+  .route("/api-keys", apiKeysRouter)
   .route("/auth", authRouter)
+  .route("/billing", billingRouter)
   .route("/openclaw", openclawRouter)
+  .route("/support", supportRouter)
   .onError(onError);
 
 type AppRouter = typeof appRouter;

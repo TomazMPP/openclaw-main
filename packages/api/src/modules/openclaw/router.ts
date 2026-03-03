@@ -21,6 +21,7 @@ import {
 
 import {
   enforceAuth,
+  enforceSubscription,
   validate,
   enforceInstance,
   enforceNoInstance,
@@ -30,6 +31,7 @@ export const openclawRouter = new Hono()
   .use(enforceAuth)
   .post(
     "/",
+    enforceSubscription,
     enforceNoInstance,
     validate("json", deployInstanceSchema),
     async (c) => {

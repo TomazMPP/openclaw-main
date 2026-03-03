@@ -120,7 +120,7 @@ export const UserNavigation = memo<UserNavigationProps>(({ user }) => {
           <DropdownMenuItem
             render={
               <TurboLink
-                href={"#"}
+                href={pathsConfig.dashboard.settings.account}
                 className="flex w-full cursor-pointer items-center gap-1.5"
                 onClick={() => setOpenMobile(false)}
               >
@@ -132,7 +132,7 @@ export const UserNavigation = memo<UserNavigationProps>(({ user }) => {
           <DropdownMenuItem
             render={
               <TurboLink
-                href={"#"}
+                href={pathsConfig.dashboard.settings.subscription}
                 className="flex w-full cursor-pointer items-center gap-1.5"
                 onClick={() => setOpenMobile(false)}
               >
@@ -144,7 +144,7 @@ export const UserNavigation = memo<UserNavigationProps>(({ user }) => {
           <DropdownMenuItem
             render={
               <TurboLink
-                href={"#"}
+                href={pathsConfig.dashboard.settings.apiKeys}
                 className="flex w-full cursor-pointer items-center gap-1.5"
                 onClick={() => setOpenMobile(false)}
               >
