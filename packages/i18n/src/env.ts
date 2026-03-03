@@ -12,7 +12,7 @@ export const preset = {
   id: "i18n",
   clientPrefix: "NEXT_PUBLIC_",
   client: {
-    NEXT_PUBLIC_DEFAULT_LOCALE: z.string().optional().default(Locale.EN),
+    NEXT_PUBLIC_DEFAULT_LOCALE: z.string().optional().default(Locale.PT),
   },
   server: {
     DEFAULT_LOCALE: z.string().optional(),

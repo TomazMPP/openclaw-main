@@ -1,43 +1,26 @@
-import { getPathname, config } from "@workspace/i18n";
-
 import { appConfig } from "~/config/app";
 import { pathsConfig } from "~/config/paths";
+import { USE_CASES } from "~/modules/marketing/use-cases/data";
 
 import type { MetadataRoute } from "next";
 
 const url = (path: string) => `${appConfig.url}${path}`;
 
-const getEntry = (path: string) => ({
-  url: url(
-    getPathname({
-      path,
-      locale: appConfig.locale,
-      defaultLocale: appConfig.locale,
-    }),
-  ),
-  alternates: {
-    languages: Object.fromEntries(
-      config.locales.map((locale) => [
-        locale,
-        url(
-          getPathname({
-            path,
-            locale,
-            defaultLocale: appConfig.locale,
-          }),
-        ),
-      ]),
-    ),
-  },
-});
-
 export default function sitemap(): MetadataRoute.Sitemap {
+  const useCaseEntries: MetadataRoute.Sitemap = USE_CASES.map((uc) => ({
+    url: url(`/${uc.slug}`),
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
   return [
     {
-      ...getEntry(pathsConfig.index),
+      url: url(pathsConfig.index),
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "weekly",
       priority: 1,
     },
+    ...useCaseEntries,
   ];
 }

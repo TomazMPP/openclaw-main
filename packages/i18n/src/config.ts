@@ -5,8 +5,8 @@ import { env } from "./env";
 import type { InitOptions, Namespace } from "i18next";
 
 export const config = {
-  locales: ["en", "es", "pt"],
-  defaultLocale: env.NEXT_PUBLIC_DEFAULT_LOCALE,
+  locales: ["pt"],
+  defaultLocale: "pt",
   namespaces: ["common", "dashboard", "auth", "marketing", "validation"],
   cookie: "locale",
 } as const;

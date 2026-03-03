@@ -26,7 +26,7 @@ export default defineEnv({
   client: {
     NEXT_PUBLIC_PRODUCT_NAME: z.string(),
     NEXT_PUBLIC_URL: z.url(),
-    NEXT_PUBLIC_DEFAULT_LOCALE: z.string().optional().default("en"),
+    NEXT_PUBLIC_DEFAULT_LOCALE: z.string().optional().default("pt"),
   },
   /**
    * Destructure all variables from `process.env` to make sure they aren't tree-shaken away.
