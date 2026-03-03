@@ -18,7 +18,12 @@ export const Header = async () => {
           aria-label={t("home")}
         >
           <Icons.Logo className="text-primary h-9 md:h-10" />
-          <Icons.LogoText className="text-foreground h-4.5 md:h-5" />
+          <span className="text-foreground text-lg font-bold tracking-tight md:text-xl">
+            Open<span className="text-primary">Claw</span>{" "}
+            <span className="text-muted-foreground text-xs font-medium tracking-widest uppercase">
+              Brasil
+            </span>
+          </span>
         </TurboLink>
 
         <div className="flex items-center justify-center">

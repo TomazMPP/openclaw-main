@@ -14,13 +14,13 @@ Use this shape in root `.env`:
 DATABASE_URL="postgresql://turbostarter:turbostarter@localhost:5432/openclaw"
 
 # The name of the product. This is used in various places across the apps.
-PRODUCT_NAME="TurboClaw"
+PRODUCT_NAME="OpenClaw Brasil"
 
 # The url of the web app. Used mostly to link between apps.
 URL="http://localhost:3000"
 
 # Default locale of the apps, can be overridden separately in each app.
-DEFAULT_LOCALE="en"
+DEFAULT_LOCALE="pt"
 ```
 
 ## 2) `apps/web/.env.local` (everything else)

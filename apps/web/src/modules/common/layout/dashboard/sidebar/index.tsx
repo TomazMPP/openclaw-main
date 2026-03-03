@@ -63,7 +63,12 @@ export const DashboardSidebar = memo<DashboardSidebarProps>(
             className="flex items-center gap-3 p-2 transition-[padding] group-data-[collapsible=icon]:p-0.5"
           >
             <Icons.Logo className="text-primary h-8 transition-[width,height]" />
-            <Icons.LogoText className="text-foreground h-4 group-data-[collapsible=icon]:hidden" />
+            <span className="text-foreground text-base font-bold tracking-tight group-data-[collapsible=icon]:hidden">
+              Open<span className="text-primary">Claw</span>{" "}
+              <span className="text-muted-foreground text-[10px] font-medium tracking-widest uppercase">
+                Brasil
+              </span>
+            </span>
           </TurboLink>
         </SidebarHeader>
 
